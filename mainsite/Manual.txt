@@ -1,0 +1,4 @@
+
+Django: Implementing a Form within a generic DetailView
+
+https://stackoverflow.com/questions/45659986/django-implementing-a-form-within-a-generic-detailview

@@ -1,0 +1,60 @@
+{% block comment_write %}
+
+<div class="col-md-8 card mb-4  mt-3 ">
+    
+  
+
+<div class="card-body">
+    {% if new_comment %}
+    <div class="alert alert-success" role="alert">
+      Your comment is awaiting moderation
+    </div>
+    {% else %}
+    <h3>댓글 남기기</h3>
+
+    <form method="post" style="margin-top: 1.3em;">
+      {{ comment_form.as_p }}
+      {% csrf_token %}
+      <button type="submit" class="btn btn-primary  btn-lg">승인</button>
+    </form>
+    
+    {% endif %}
+  </div>
+
+
+{% endblock comment_write %}
+
+
+
+{% comment %}
+
+<form action="" method="post">
+  {% csrf_token %}
+  ---
+  {{ comment_form.as_table }}
+<div class="fieldWrapper">
+  {{ comment_form.post.errors }}
+  <label for="{{ comment_form.post.id_for_label }}">Email subject:</label>
+  {{ comment_form.post }}
+</div>
+<div class="fieldWrapper">
+  {{ comment_form.name.errors }}
+  <label for="{{ comment_form.name.id_for_label }}">Your message:</label>
+  {{ comment_form.name }}
+</div>
+<div class="fieldWrapper">
+  {{ comment_form.email.errors }}
+  <label for="{{ comment_form.email.id_for_label }}">Your email address:</label>
+  {{ comment_form.email }}
+</div>
+<div class="fieldWrapper">
+  {{ comment_form.created_on.errors }}
+  <label for="{{ comment_form.created_on.id_for_label }}">CC yourself?</label>
+  {{ comment_form.created_on }}
+</div>
+
+<input type="submit" value="Submit">
+</form>
+
+</div>
+{% endcomment %}

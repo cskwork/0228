@@ -1,0 +1,4 @@
+django-admin-rangefilter == 0.7.0
+django-summernote == 0.8.11.6
+django-debug-toolbar == 3.2
+django-pwa == 1.0.10

@@ -1,0 +1,25 @@
+
+<div class="container">
+ 
+  <div class="col-md-8 card mb-4  mt-3 ">
+    <div class="card-body">
+      <!-- comments content-->
+      <h2>{{ post.comments.all.count }} comments</h2>
+
+      <!-- post.comments.all에서 찾아야 함 -->
+      {% for comment in post.comments.all %}
+      <div class="comments" style="padding: 10px;">
+        <p class="font-weight-bold">
+          {{ comment.name }}
+          <span class=" text-muted font-weight-normal">
+            {{ comment.created_on }}
+          </span>
+        </p>
+        {{ comment.content | safe }}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
+</div>
